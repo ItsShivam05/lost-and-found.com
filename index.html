@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="one">Lost and Found</h1>
+        <nav>
+            <button onclick="scrollToSection('report-lost')">Report Lost Item</button>
+            <button onclick="scrollToSection('report-found')">Report Found Item</button>
+            <button onclick="scrollToSection('search')">Search Items</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="report-lost">
+            <h2>Report a Lost Item</h2>
+            <form>
+                <label for="lost-description">Item Description:</label>
+                <textarea id="lost-description" required></textarea>
+
+                <label for="lost-location">Location Lost:</label>
+                <input type="text" id="lost-location" required>
+
+                <label for="lost-date">Date Lost:</label>
+                <input type="date" id="lost-date" required>
+
+                <label for="contact-info">Contact Information:</label>
+                <input type="text" id="contact-info" required>
+
+                <label for="lost-photo">Upload Photo:</label>
+                <input type="file" id="lost-photo" accept="image/*">
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="report-found">
+            <h2>Report a Found Item</h2>
+            <form>
+                <label for="found-description">Item Description:</label>
+                <textarea id="found-description" required></textarea>
+
+                <label for="found-location">Location Found:</label>
+                <input type="text" id="found-location" required>
+
+                <label for="found-date">Date Found:</label>
+                <input type="date" id="found-date" required>
+
+                <label for="contact-info-found">Contact Information:</label>
+                <input type="text" id="contact-info-found" required>
+
+                <label for="found-photo">Upload Photo:</label>
+                <input type="file" id="found-photo" accept="image/*">
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="search">
+            <h2>Search for Items</h2>
+            <input type="text" placeholder="Search by description or location">
+            <button>Search</button>
+            <div class="results">
+                <h3>Results:</h3>
+                <p>No results found.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Lost and Found. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
